@@ -6,13 +6,13 @@ import neat
 # %% -- Read in Data
 
 # Meta Data
-meta = pd.read_csv('meta_data.csv')
+meta = pd.read_csv('../2. Data/meta_data.csv')
 feature_types_dict = dict(zip(meta['feature'], meta['feature_type']))
 
 apply_stats_features = meta[meta['apply_stats'] == "TRUE"]['feature'].tolist()
 
 # Current Season
-data_22_23 = pd.read_csv('22-23 FFL.csv', dtype=feature_types_dict)
+data_22_23 = pd.read_csv('../2. Data/22-23 FFL.csv', dtype=feature_types_dict)
 
 # %% -- Apply stats to Current Season
 
@@ -31,10 +31,9 @@ for player in data_22_23['name'].unique():
     
     # Create missing rows for earlier game weeks
     if earliest_gw > 1:
-        missing_gws = range(1, earliest_gw)
         missing_data = pd.DataFrame({
             'name': [player] * (earliest_gw - 1),
-            'GW': missing_gws,
+            'GW': range(1, earliest_gw),
             'player_available': [False] * (earliest_gw - 1)
         })
         
