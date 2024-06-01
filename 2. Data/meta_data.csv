@@ -32,7 +32,7 @@ starts,int,0,0
 team_a_score,int,0,0
 team_h_score,int,0,0
 threat,int,0,0
-total_points,int,0,0
+total_points,int,1,1
 transfers_balance,int,0,0
 transfers_in,int,0,0
 transfers_out,int,0,0

@@ -2,13 +2,16 @@
 fitness_criterion     = max
 fitness_threshold     = 10000
 pop_size              = 100
-reset_on_extinction   = False
+reset_on_extinction   = True
 
 [DefaultGenome]
 # node activation options
-activation_default      = sigmoid
+activation_default      = tanh
 activation_mutate_rate  = 0.0
-activation_options      = sigmoid
+activation_options      = tanh
+
+response_replace_rate = 0.1
+enabled_default = True
 
 # node aggregation options
 aggregation_default     = sum
@@ -37,6 +40,7 @@ conn_delete_prob        = 0.5
 enable_default          = True
 feed_forward            = True
 initial_connection      = full
+enabled_mutate_rate     = 0.01
 
 # node add/remove rates
 node_add_prob           = 0.2
@@ -44,8 +48,9 @@ node_delete_prob        = 0.2
 
 # network parameters
 num_hidden              = 0
-num_inputs              = X
-num_outputs             = 777
+num_inputs              = 94
+# num_inputs              = 890
+num_outputs             = 1
 
 # node response options
 response_init_mean      = 1.0
