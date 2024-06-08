@@ -1,0 +1,10 @@
+add feature based on team selected
+ - total value for each position
+
+what team playing next week
+stats about that team
+
+Encode GW in to sections on the season
+ - 0, 1-10, 10 - 19, 20-28, 29-38
+
+DONE - add some normalised values by value
